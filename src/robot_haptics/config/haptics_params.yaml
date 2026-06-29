@@ -1,0 +1,106 @@
+/**:
+  ros__parameters:
+    # -----------------------------------------------------------------
+    # Device
+    # -----------------------------------------------------------------
+    device_name:  "Ares"        # evdev InputDevice.name to search for
+    device_path:  ""            # Override: set to e.g. /dev/input/event3
+
+    # -----------------------------------------------------------------
+    # Global
+    # -----------------------------------------------------------------
+    haptic_scale:       1.0     # 0.0–1.0 — scales ALL vibration magnitudes
+    ff_gain_normal:     0.70    # Baseline FF_GAIN (0.0–1.0)
+    ff_gain_emergency:  1.00    # FF_GAIN during emergency
+
+    # -----------------------------------------------------------------
+    # Heartbeat pulse
+    # Played as: pulse1 → gap → pulse2 → period → repeat
+    # -----------------------------------------------------------------
+    hb_strong1:  65000
+    hb_weak1:    25000
+    hb_dur1:     80       # ms
+    hb_strong2:  60000
+    hb_weak2:    22000
+    hb_dur2:     60       # ms
+    hb_gap:      0.05     # seconds between pulses
+    hb_period:   0.85     # seconds of silence between beats
+
+    # -----------------------------------------------------------------
+    # Rain (playback ambience)
+    # -----------------------------------------------------------------
+    rain_weak_min:      22000
+    rain_weak_max:      40000
+    rain_strong_min:    0
+    rain_strong_max:    10000
+    rain_dur_min:       60      # ms
+    rain_dur_max:       130     # ms
+    rain_gap_min:       0.04    # seconds
+    rain_gap_max:       0.18    # seconds
+    rain_heavy_chance:  0.15    # probability 0.0–1.0
+    rain_heavy_strong:  22000
+    rain_heavy_weak:    50000
+    rain_heavy_dur:     90      # ms
+
+    # -----------------------------------------------------------------
+    # Emergency
+    # -----------------------------------------------------------------
+    emergency_strong:  65535
+    emergency_weak:    40000
+    emergency_pulse:   150      # ms per pulse
+    emergency_gap:     0.12     # seconds between pulses
+    emergency_pause:   0.60     # seconds between groups of 3
+
+    # -----------------------------------------------------------------
+    # Mop feedback
+    # -----------------------------------------------------------------
+    mop_on_weak:    30000
+    mop_on_dur:     120   # ms
+    mop_on_sleep:   0.17  # seconds
+
+    mop_off_weak:   28000
+    mop_off_dur:    100   # ms
+    mop_off_sleep:  0.15  # seconds
+    mop_off_gap:    0.08  # seconds between the two buzzes
+
+    # -----------------------------------------------------------------
+    # Brush feedback
+    # -----------------------------------------------------------------
+    brush_on_weak:    32000
+    brush_on_dur:     350   # ms
+    brush_on_sleep:   0.40  # seconds
+
+    brush_off_short_weak:   20000
+    brush_off_short_dur:    100   # ms
+    brush_off_short_sleep:  0.15  # seconds
+    brush_off_gap:          0.10  # seconds between long and short buzz
+    brush_speed_buzz_gap:   0.12  # seconds between successive speed-level buzzes
+
+    # -----------------------------------------------------------------
+    # Thump (recording stop)
+    # -----------------------------------------------------------------
+    thump_strong:  60000
+    thump_dur:     120    # ms
+    thump_sleep:   0.18   # seconds
+
+    # -----------------------------------------------------------------
+    # Safety unlock progress pulse
+    # -----------------------------------------------------------------
+    safety_pulse_weak:  20000
+    safety_pulse_dur:   80    # ms
+
+    # -----------------------------------------------------------------
+    # Notification queue pauses (around rain interruptions)
+    # -----------------------------------------------------------------
+    notif_rain_pause:   0.04  # seconds to wait after pausing rain
+    notif_rain_resume:  0.05  # seconds to wait before resuming rain
+
+    # -----------------------------------------------------------------
+    # Thread join
+    # -----------------------------------------------------------------
+    thread_join_timeout:  1.5  # seconds to wait when joining continuous-effect threads
+
+    # -----------------------------------------------------------------
+    # Development
+    # -----------------------------------------------------------------
+    dry_run:  false   # Set true to test without hardware

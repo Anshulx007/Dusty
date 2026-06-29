@@ -1,0 +1,33 @@
+/**:
+  ros__parameters:
+    # -----------------------------------------------------------------
+    # Serial port configuration
+    # -----------------------------------------------------------------
+    port: "/dev/ttyACM0"          # Preferred port (tried first; then auto-scan)
+    baud: 9600                    # Must match the Arduino sketch baud rate
+    connect_delay: 2.0            # Seconds to wait after Serial.open() for board reset
+    reconnect_interval: 5.0       # Seconds between reconnect attempts
+
+    # -----------------------------------------------------------------
+    # Arduino detection
+    # -----------------------------------------------------------------
+    ready_string: "READY"         # String the sketch prints on boot (case-insensitive)
+    scan_keywords:                # USB chip description keywords to prefer
+      - "arduino"
+      - "ch340"
+      - "wch"
+      - "usb-serial"
+      - "usb serial"
+      - "ftdi"
+      - "cp210"
+
+    # -----------------------------------------------------------------
+    # Runtime
+    # -----------------------------------------------------------------
+    status_rate_hz: 5.0           # How often to publish /arduino_status
+    cmd_timeout_sec: 0.5          # Send S0 if no /drive_cmd arrives within this
+
+    # -----------------------------------------------------------------
+    # Development
+    # -----------------------------------------------------------------
+    dry_run: false                # Set true to run without hardware (logs commands only)

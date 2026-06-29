@@ -1,0 +1,75 @@
+/**:
+  ros__parameters:
+    # -----------------------------------------------------------------
+    # Ares controller button indices
+    # Calibrate: ros2 run joy joy_node, then ros2 topic echo /joy
+    # -----------------------------------------------------------------
+    btn_a:         0    # Brush speed cycle
+    btn_b:         1    # Brush OFF
+    btn_x:         2    # Mop ON
+    btn_y:         3    # Mop OFF
+    btn_lb:        4    # Record start/stop
+    btn_rb:        5    # Playback start
+    btn_select:    6    # Safety lock (3×)
+    btn_start:     7    # Safety unlock (hold)
+    btn_home:      8    # Mute haptics
+    btn_thumbl:    9    # Precision mode toggle
+
+    # -----------------------------------------------------------------
+    # Ares controller axis indices
+    # -----------------------------------------------------------------
+    axis_lx:       0    # Left stick X  (steering: negative=left, positive=right)
+    axis_lt:       2    # Left trigger  (forward throttle: -1=released, 1=pressed)
+    axis_rt:       5    # Right trigger (backward throttle)
+
+    # -----------------------------------------------------------------
+    # Drive parameters
+    # -----------------------------------------------------------------
+    trigger_deadband:  0.04   # Normalized [0,1]; ignore triggers below this
+    angular_threshold: 0.30   # Normalized LX threshold to trigger a turn
+    min_speed:         0.20   # Minimum speed when above deadband (normalized)
+    max_speed:         1.00   # Maximum speed (normalized)
+
+    # -----------------------------------------------------------------
+    # Acceleration ramping
+    # -----------------------------------------------------------------
+    enable_ramp:       true
+    acceleration_rate: 1.80   # Normalized/sec — how fast speed increases
+    deceleration_rate: 3.50   # Normalized/sec — how fast speed decreases / brakes
+
+    # -----------------------------------------------------------------
+    # Precision mode
+    # -----------------------------------------------------------------
+    precision_mode_enabled: true
+    precision_max_speed:    0.20  # Max speed while in precision mode (normalized)
+
+    # -----------------------------------------------------------------
+    # Recording
+    # -----------------------------------------------------------------
+    record_speed_limit:  0.40   # Max speed while recording (normalized)
+    playback_start_delay: 0.35  # Seconds between heartbeat and rain on playback start
+    playback_end_delay:   0.15  # Seconds before double-heartbeat at playback end
+
+    # -----------------------------------------------------------------
+    # Safety lock
+    # -----------------------------------------------------------------
+    safety_enable:       true
+    safety_press_count:  3       # SELECT presses needed to lock
+    safety_press_window: 2.0     # Window (seconds) for press count
+    safety_unlock_hold:  3.0     # Seconds START must be held to unlock
+    safety_unlock_pulse: 0.5     # Seconds between unlock progress pulses
+
+    # -----------------------------------------------------------------
+    # Brush
+    # -----------------------------------------------------------------
+    # Fraction of full PWM for each speed level (A cycles through these)
+    brush_speed_levels:
+      - 0.33
+      - 0.66
+      - 1.00
+
+    # -----------------------------------------------------------------
+    # Timing
+    # -----------------------------------------------------------------
+    drive_publish_rate_hz: 50.0  # How often the drive ramp runs (Hz)
+    joy_timeout_sec:        0.5  # Stop if /joy is silent for this long
