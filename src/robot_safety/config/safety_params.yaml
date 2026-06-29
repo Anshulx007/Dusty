@@ -1,0 +1,28 @@
+/**:
+  ros__parameters:
+    # -----------------------------------------------------------------
+    # Watchdog timeouts
+    # If no DriveCmd arrives from a source within its timeout window,
+    # safety_node publishes an E-stop on /drive_cmd.
+    # -----------------------------------------------------------------
+    teleop_timeout_sec: 0.5    # Maximum silence from teleop before E-stop
+    nav_timeout_sec:    1.0    # Maximum silence from navigation before E-stop
+
+    # -----------------------------------------------------------------
+    # Watchdog timer rate
+    # -----------------------------------------------------------------
+    watchdog_rate_hz: 20.0    # How often the watchdog tick runs
+
+    # -----------------------------------------------------------------
+    # Future: mode arbitration
+    # Uncomment when MODE_MANUAL / MODE_AUTONOMOUS switching is implemented.
+    # -----------------------------------------------------------------
+    # default_mode: 0          # 0=MANUAL, 1=AUTONOMOUS, 2=PAUSED, 3=ESTOP
+    # allow_mode_switch: true  # Allow teleop to request mode change
+
+    # -----------------------------------------------------------------
+    # Future: velocity limits enforced by safety node
+    # Applied regardless of the source that published the command.
+    # -----------------------------------------------------------------
+    # max_linear:  1.0         # Maximum allowed normalised linear speed
+    # max_angular: 1.0         # Maximum allowed normalised angular rate

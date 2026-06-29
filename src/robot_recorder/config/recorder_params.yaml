@@ -1,0 +1,23 @@
+/**:
+  ros__parameters:
+    # -----------------------------------------------------------------
+    # Recording limits
+    # -----------------------------------------------------------------
+    # Maximum session duration in seconds. 0 means unlimited.
+    max_duration_sec: 0.0
+
+    # Speed limit enforced during recording (normalised [0.0, 1.0]).
+    # Commands arriving above this value will be clamped before buffering.
+    # 0.0 means no limit is applied.
+    record_speed_limit: 0.0
+
+    # -----------------------------------------------------------------
+    # Output
+    # -----------------------------------------------------------------
+    # Directory where completed recordings are saved.
+    # Leave empty to disable file output (stub default).
+    output_dir: ""
+
+    # Filename prefix for saved recordings.
+    # Full filename will be: <prefix>_<ISO8601_timestamp>.json
+    output_prefix: "robot_session"

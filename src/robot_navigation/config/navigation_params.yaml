@@ -1,0 +1,34 @@
+/**:
+  ros__parameters:
+    # -----------------------------------------------------------------
+    # Publish rate
+    # -----------------------------------------------------------------
+    # How often navigation_node publishes /drive_cmd (Hz).
+    # Keep at or above the arduino_driver cmd_timeout_sec rate to avoid
+    # spurious watchdog stops when navigation is the active source.
+    publish_rate_hz: 10.0
+
+    # -----------------------------------------------------------------
+    # Future: VFH+ parameters
+    # Uncomment and tune when implementing obstacle avoidance.
+    # -----------------------------------------------------------------
+    # vfh_cell_size_m:      0.10      # occupancy-grid cell size (metres)
+    # vfh_window_radius:    5         # active-window radius in cells
+    # vfh_threshold:        3000      # histogram density threshold
+    # vfh_sector_angle_deg: 5         # histogram sector width (degrees)
+    # vfh_turn_rate_max:    1.0       # maximum normalised turn rate [-1, 1]
+    # vfh_target_threshold: 0.15      # radians — goal-reached tolerance
+
+    # -----------------------------------------------------------------
+    # Future: frontier exploration parameters
+    # -----------------------------------------------------------------
+    # frontier_min_size:    10        # minimum frontier size (cells)
+    # frontier_gain:        1.0       # weighting for frontier score
+
+    # -----------------------------------------------------------------
+    # Safety / speed limits
+    # These are enforced inside navigation_node independently of
+    # robot_safety, as a belt-and-suspenders measure.
+    # -----------------------------------------------------------------
+    # max_linear:   0.60    # maximum normalised linear speed [0, 1]
+    # max_angular:  0.80    # maximum normalised angular rate [0, 1]
