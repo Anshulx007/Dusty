@@ -1,0 +1,18 @@
+# ROS 2 build
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
